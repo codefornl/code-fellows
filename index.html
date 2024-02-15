@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<section class="text-center">
+    <h2>Code Fellows</h2>
+
+    <p>Kijk op <a href="https://github.com/codefornl/code-fellows">Github</a> om jezelf als Code Fellow toe te laten voegen. We gebruiken hiervoor de <a href="https://jsonresume.org/schema/">JSON Resume</a> standaard.</a></p>
+
+    <div class="person-list">
+        {% for code-fellow in site.code-fellows %}
+        <div class="person">
+            <img class="picture" src="{{ code-fellow.basics.image }}">
+            <p>
+                {{ code-fellow.basics.name }}<br>
+                <a href="mailto:{{ code-fellow.basics.email }}">{{ code-fellow.basics.email }}</a>
+            </p>
+            <p>{{ code-fellow.basics.summary }}</p>
+            <p class="social">
+                <a class="websiteBtn smGlobalBtn" href="{{ code-fellow.basics.url }}"></a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="text-center principles-section">
+    <!-- <h2>Onze Principes</h2> -->
+    <div class="principles">
+        
+        <div class="principle">
+            <h3>We werken aan overheid en maatschappij, niet aan politiek.</h3>
+            <!-- <p></p> -->
+        </div>
+        
+        <div class="principle">
+            <h3>We ontwikkelen oplossingen voor en met burgers.</h3>
+            <!-- <p></p> -->
+        </div>
+        
+        <div class="principle">
+            <h3>We laten zien wat mogelijk is.</h3>
+            <!-- <p></p> -->
+        </div>
+        
+        <div class="principle">
+            <h3>We werken open en transparant.</h3>
+            <!-- <p></p> -->
+        </div>
+        
+        <div class="principle">
+            <h3>We bouwen mee aan een ecosysteem.</h3>
+            <!-- <p></p> -->
+        </div>
+        
+    </div>
+</section>
