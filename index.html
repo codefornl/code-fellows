@@ -6,7 +6,42 @@ layout: default
 
     <p>Kijk op <a href="https://github.com/codefornl/code-fellows">Github</a> om jezelf als Code Fellow toe te laten voegen. We gebruiken hiervoor de <a href="https://jsonresume.org/schema/">JSON Resume</a> standaard.</a></p>
 
-    <div class="person-list">
+    <div class="person-list" id="code-fellow-list">
+        <script src="micro-templating.js"></script>
+        <script type="text/html" id="code-fellow">
+            <div class="person">
+                <img class="picture" src="<%=image%>">
+                <p>
+                    <%=name%><br>
+                    <a href="mailto:<%=email%>"><%=email%></a>
+                </p>
+                <p><%=summary%></p>
+                <p class="social">
+                    <a class="websiteBtn smGlobalBtn" href="<%=url%>"></a>
+                </p>
+            </div>
+        </script>
+        <script type="module">
+            var codeFellowResumeUrls = await fetch('/code-fellows.json')
+                .then(response => response.json())
+                .then(data => data["code-fellows"]);
+            codeFellowResumeUrls.forEach(function (url) {
+                fetch(url)
+                    .then(response => response.json())
+                    .then(resume => {
+                        var values = {
+                            "name":  resume.basics.name || "Anonieme Code Fellow",
+                            "email": resume.basics.email || "no-reply@codefor.nl",
+                            "summary": resume.basics.summary || "Nog geen omschrijving beschikbaar.",
+                            "image": resume.basics.image || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png",
+                            "url": resume.basics.url || "https://codefor.nl/"
+                        };
+                        var template = document.getElementById('code-fellow').innerHTML;
+                        var html = tmpl(template, values);
+                        document.getElementById('code-fellow-list').innerHTML += html;
+                    });
+            });
+        </script>
         {% for code-fellow in site.code-fellows %}
         <div class="person">
             <img class="picture" src="{{ code-fellow.basics.image }}">
