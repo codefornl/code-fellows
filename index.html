@@ -22,7 +22,7 @@ layout: default
             </div>
         </script>
         <script type="module">
-            var codeFellowResumeUrls = await fetch('/code-fellows.json')
+            var codeFellowResumeUrls = await fetch('code-fellows.json')
                 .then(response => response.json())
                 .then(data => data["code-fellows"]);
             codeFellowResumeUrls.forEach(function (url) {
