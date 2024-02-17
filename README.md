@@ -2,8 +2,8 @@
 Overzicht van Code Fellows
 
 ## Voeg jezelf toe als Code Fellow
-Voeg een bestand toe aan de _code-fellows map (kopieer een bestaand bestand en pas de gegevens aan) en maak een pull request.
+Voeg een bestand toe aan de code-fellows map: kopieer een bestaand <code-fellow>.resume.json bestand en pas de gegevens aan, en voeg een link toe aan code-fellows.json. Maak daarna een pull request.
 
 OF
 
-Voeg een url toe naar je resume json in het _data/code-fellows.yml bestand en maak een pull request.
+Voeg een url toe aan code-fellows.json naar een resume.json bestand op je eigen domein en maak een pull request.

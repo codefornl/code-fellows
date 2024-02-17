@@ -1,8 +1,6 @@
----
-permalink: code-fellows.json
----
 {
-    "code-fellows": [{% for url in site.data.code-fellows.resume-json-urls %}
-        "{{ url }}"{% unless forloop.last %},{% endunless %}
-    {% endfor %}]
+    "code-fellows": [
+        "https://www.jgroenen.nl/resume.json",
+        "code-fellows/johan-groenen.resume.json"
+    ]
 }

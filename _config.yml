@@ -2,15 +2,3 @@ title: Code Fellows | Code for NL
 subtitle: Overzicht van Code for NL Code Fellows
 img: https://assets.codefor.nl/codefornl/img/logo.png
 url: https://www.codefor.nl/code-fellows
-
-collections:
-  code-fellows:
-    output: true
-    permalink: /code-fellow/:name/
-
-defaults:
-  - scope:
-      type: code-fellows
-    values:
-      layout: default
-      collection: code-fellows
