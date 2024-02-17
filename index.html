@@ -4,22 +4,21 @@ layout: default
 <section class="text-center">
     <h2>Code Fellows</h2>
 
-    <p>Code Fellows werken samen aan een open, eerlijke en inclusieve digitale overheid en samenleving. We komen maandelijks bijeen om te hacken aan tools die ons daarbij ondersteunen.</p>
+    <p>Code Fellows werken samen aan een open, eerlijke en inclusieve digitale overheid en samenleving. We komen
+        maandelijks bijeen om te hacken aan tools die ons daarbij ondersteunen.</p>
 
-    <p>Kijk op <a href="https://github.com/codefornl/code-fellows">Github</a> om jezelf als Code Fellow toe te laten voegen. We gebruiken hiervoor de <a href="https://jsonresume.org/schema/">JSON Resume</a> standaard.</a></p>
+    <p>Kijk op <a href="https://github.com/codefornl/code-fellows">Github</a> om jezelf als Code Fellow toe te laten
+        voegen. We gebruiken hiervoor de <a href="https://jsonresume.org/schema/">JSON Resume</a> standaard.</a></p>
 
-    <input style="padding: 1em; font-size: 1em; width: 20em" type="search" id="search" placeholder="Filter op kennis en expertise">
+    <input style="padding: 1em; font-size: 1em; width: 20em" type="search" id="search"
+        placeholder="Filter op kennis en expertise">
     <script>
         document.getElementById('search').addEventListener('keyup', function (event) {
             var search = event.target.value.toLowerCase();
             var persons = document.querySelectorAll('.person');
             persons.forEach(function (person) {
                 var skills = person.querySelector('.skills').textContent.toLowerCase();
-                if (skills.includes(search)) {
-                    person.style.display = 'block';
-                } else {
-                    person.style.display = 'none';
-                }
+                person.style.display = skills.includes(search) ? "block" : "none";
             });
         });
     </script>
@@ -49,7 +48,7 @@ layout: default
                     .then(response => response.json())
                     .then(resume => {
                         var values = {
-                            "name":  resume.basics.name || "Anonieme Code Fellow",
+                            "name": resume.basics.name || "Anonieme Code Fellow",
                             "email": resume.basics.email || "no-reply@codefor.nl",
                             "summary": resume.basics.summary || "Nog geen omschrijving beschikbaar.",
                             "image": resume.basics.image || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png",
@@ -62,51 +61,25 @@ layout: default
                     });
             });
         </script>
-        {% for code-fellow in site.code-fellows %}
-        <div class="person">
-            <img class="picture" src="{{ code-fellow.basics.image }}">
-            <p>
-                {{ code-fellow.basics.name }}<br>
-                <a href="mailto:{{ code-fellow.basics.email }}">{{ code-fellow.basics.email }}</a>
-            </p>
-            <p class="summary">{{ code-fellow.basics.summary }}</p>
-            <p class="skills"></p>
-            <p class="social">
-                <a class="websiteBtn smGlobalBtn" href="{{ code-fellow.basics.url }}"></a>
-            </p>
-        </div>
-        {% endfor %}
     </div>
 </section>
 
 <section class="text-center principles-section">
-    <!-- <h2>Onze Principes</h2> -->
     <div class="principles">
-        
         <div class="principle">
             <h3>We werken aan overheid en maatschappij, niet aan politiek.</h3>
-            <!-- <p></p> -->
         </div>
-        
         <div class="principle">
             <h3>We ontwikkelen oplossingen voor en met burgers.</h3>
-            <!-- <p></p> -->
         </div>
-        
         <div class="principle">
             <h3>We laten zien wat mogelijk is.</h3>
-            <!-- <p></p> -->
         </div>
-        
         <div class="principle">
             <h3>We werken open en transparant.</h3>
-            <!-- <p></p> -->
         </div>
-        
         <div class="principle">
             <h3>We bouwen mee aan een ecosysteem.</h3>
-            <!-- <p></p> -->
         </div>
-        
     </div>
 </section>
