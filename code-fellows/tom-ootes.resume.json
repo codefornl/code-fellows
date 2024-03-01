@@ -1,0 +1,12 @@
+{
+    "basics": {
+        "name": "Tom Ootes",
+        "summary": "Ha 🖖 Ik ben Tom Ootes. Ik ben freelance software developer met een grote interesse in Open Source Software. Al sinds 2014 ben ik bezig met front-end werk en droom ik over gedeelde Design Systems. Tijdens de corona pandemie heb ik bij het ministerie van Volksgezondheid, Welzijn en Sport (VWS) gewerkt aan de bron- en contact onderzoek software. Sinds april 2023 ben ik onderdeel van developer.overheid.nl. Developer Overheid probeert alle aanwezige tools en documentatie te bundelen en vindbaar te maken. Ik struin daarvoor ook conferenties af om te kijken wat er allemaal voor handen is.",
+        "image": "https://ucarecdn.com/18efb2dc-a023-49c3-8df8-8d911681e153/-/preview/1000x972/",
+        "email": "tom@ootes.io",
+        "url": "https://ootes.io"
+    },
+    "skills": [
+        {"keywords": ["Jekyll", "SCSS", "Leaflet.js","TypeScript","Open Source Software","Python","Praatjes"]}
+    ]
+}
