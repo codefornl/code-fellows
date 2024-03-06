@@ -2,7 +2,7 @@
     "code-fellows": [
         "https://www.jgroenen.nl/resume.json",
         "code-fellows/tom-ootes.resume.json",
-        "https://github.com/marcvanandel/marcvanandel/blob/main/marcvanandel.resume.json"
+        "https://raw.githubusercontent.com/marcvanandel/marcvanandel/main/marcvanandel.resume.json"
     ],
     "disabled": [
         "code-fellows/johan-groenen.resume.json"
