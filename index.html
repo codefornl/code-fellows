@@ -40,10 +40,19 @@ layout: default
             </div>
         </script>
         <script type="module">
+            Array.prototype.shuffle = function () {
+                for (var i = 0; i < this.length; ++i) {
+                    var j = Math.floor(Math.random() * this.length);
+                    var tmp = this[i];
+                    this[i] = this[j];
+                    this[j] = tmp;
+                }
+                return this;
+            };
             var codeFellowResumeUrls = await fetch('code-fellows.json')
                 .then(response => response.json())
                 .then(data => data["code-fellows"]);
-            codeFellowResumeUrls.forEach(function (url) {
+            codeFellowResumeUrls.shuffle().forEach(function (url) {
                 fetch(url)
                     .then(response => response.json())
                     .then(resume => {
