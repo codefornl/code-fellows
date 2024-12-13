@@ -27,16 +27,21 @@ layout: default
         <script src="micro-templating.js"></script>
         <script type="text/html" id="code-fellow">
             <div class="person">
-                <img class="picture" src="<%=image%>">
-                <p>
-                    <%=name%><br>
-                    <a href="mailto:<%=email%>"><%=email%></a>
-                </p>
-                <p class="summary"><%=summary%></p>
-                <p class="skills"><%=skills.replace(/,/g, ', ')%></p>
-                <p class="social">
-                    <a class="websiteBtn smGlobalBtn" href="<%=url%>"></a>
-                </p>
+                <div>
+                    <img class="picture" src="<%=image%>">
+                    <p>
+                        <%=name%><br>
+                        
+                        <p class="social">
+                            <a href="mailto:<%=email%>"><%=email%></a><br>
+                            <a class="websiteBtn smGlobalBtn" href="<%=url%>"></a>
+                        </p>
+                    </p>
+                </div>
+                <div>
+                    <p class="summary"><%=summary%></p>
+                    <p class="skills"><%=skills.replace(/,/g, ', ')%></p>
+                </div>
             </div>
         </script>
         <script type="module">

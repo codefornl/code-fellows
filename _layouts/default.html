@@ -10,17 +10,22 @@
     <link rel="stylesheet" href="https://www.codefor.nl/css/style.css" type="text/css" media="all">
     <style>
         .person-list {
-            flex-wrap: wrap;
-        }
-        .person {
-            flex: 0 0 33.333333%;
-            margin: 40px auto;
-            padding: 0;
-        }
-        .person > .summary,
-        .person > .skills {
-            text-align: justify;
-            padding: 20px;
+            display: block;
+
+            & .person {
+                display: flex;
+                flex: none;
+                width: 100%;
+                max-width: 40em;
+
+                & p { margin: 0; margin-bottom: 10px; }
+
+                & > div { flex: 1; padding: 10px; }
+
+                & > div:first-child { max-width: 10em; }
+
+                & .summary, & .skills { text-align: justify; }
+            }
         }
     </style>
 </head>
